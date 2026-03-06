@@ -12,10 +12,41 @@ Imagine que você abriu uma loja:
     - remove um elemento pelo índice
     - mostra estoque
 */
-//                   0           1         2         3         4         5         6         7
-const JOESTARS = ["Jonathan", "Joseph", "Jotaro", "Josuke", "Giorno", "Jolyne", "Johnny", "Gappy"]
-const ranking =  [   8      ,    7    ,    4    ,    6    ,    1    ,    5    ,    2    ,    3   ]
+//                     0           1         2         3         4         5         6         7
+const Alimentos =  ["Salgados", "Feijão", "Miojo", "Chocolate", "Refri", "Suco", "Arroz", "iogurte"]
+const Valores  =   [   3,50   ,    50   ,   4,20 ,  6,90      ,   5,40 ,  1,90 ,    46  ,    5,35  ]
+
 let contador = 0
-while(contador < JOESTARS.length){
-    console.log(JOESTARS[contador])
+while(contador < Alimentos.length){
+    console.log(Alimentos[contador] +" - R$" + Valores[contador])
+    contador = contador + 1
+}
+
+
+mostrarAlimentos()
+
+Alimentos.push("Milho")
+Valores.push(7,10)
+console.log(Alimentos)
+
+Alimentos.pop()
+Valores.pop()
+console.log(Alimentos)
+
+Alimentos.splice(2,1)
+console.log(Alimentos)
+Alimentos.splice(2,2)
+console.log(Alimentos)
+Alimentos.splice(0,1, "Milho" )
+console.log(Alimentos)
+
+function adicionarProduto(Milho){
+    let valores = (0,1)
+    return "Salgado fora de estoque, substituir por Milho "
+}
+
+adicionarAlimento("Milho", 0,1)
+function removerAlimento (indice){
+    Alimentos.splice(indice, 1)
+
 }
