@@ -12,41 +12,33 @@ Imagine que você abriu uma loja:
     - remove um elemento pelo índice
     - mostra estoque
 */
-//                     0           1         2         3         4         5         6         7
-const Alimentos =  ["Salgados", "Feijão", "Miojo", "Chocolate", "Refri", "Suco", "Arroz", "iogurte"]
-const Valores  =   [   3,50   ,    50   ,   4,20 ,  6,90      ,   5,40 ,  1,90 ,    46  ,    5,35  ]
 
-let contador = 0
-while(contador < Alimentos.length){
-    console.log(Alimentos[contador] +" - R$" + Valores[contador])
-    contador = contador + 1
+//indice                0           1         2         3         4         5         6         7
+const Alimentos =  ["Salgados", "Feijão", "Miojo", "Chocolate", "Refri", "Suco", "Arroz", "iogurte"]
+const Valores  =   [   3.50   ,    50   ,   4.20 ,  6.90      ,   5.40 ,  1.90 ,    46  ,    5.35  ]
+
+let indice = 0
+function mostrarAlimentos(){
+while(indice < Alimentos.length){
+    console.log(Alimentos[indice] + " - R$" + Valores[indice])
+    indice = indice +1
+    }
+    console.log("---------------------------------------")
 }
 
 
 mostrarAlimentos()
 
-Alimentos.push("Milho")
-Valores.push(7,10)
-console.log(Alimentos)
 
-Alimentos.pop()
-Valores.pop()
-console.log(Alimentos)
-
-Alimentos.splice(2,1)
-console.log(Alimentos)
-Alimentos.splice(2,2)
-console.log(Alimentos)
-Alimentos.splice(0,1, "Milho" )
-console.log(Alimentos)
-
-function adicionarProduto(Milho){
-    let valores = (0,1)
-    return "Salgado fora de estoque, substituir por Milho "
+function adicionarAlimento(nome, valor){
+    Alimentos.push(nome)
+    Valores.push(valor)
+    console.log("adicionar " + nome)
 }
 
-adicionarAlimento("Milho", 0,1)
+adicionarAlimento("Milho", 3.90 )
+mostrarAlimentos()
 function removerAlimento (indice){
     Alimentos.splice(indice, 1)
-
+    Valores.splice(indice, 1)
 }
