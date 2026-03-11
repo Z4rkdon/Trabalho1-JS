@@ -16,12 +16,11 @@ Imagine que você abriu uma loja:
 //indice                0           1         2         3         4         5         6         7
 const Alimentos =  ["Salgados", "Feijão", "Miojo", "Chocolate", "Refri", "Suco", "Arroz", "iogurte"]
 const Valores  =   [   3.50   ,    50   ,   4.20 ,  6.90      ,   5.40 ,  1.90 ,    46  ,    5.35  ]
-
-let indice = 0
 function mostrarAlimentos(){
-while(indice < Alimentos.length){
-    console.log(Alimentos[indice] + " - R$" + Valores[indice])
-    indice = indice +1
+    let indice = 0
+    while(indice < Alimentos.length){
+        console.log(Alimentos[indice] + " - R$" + Valores[indice])
+        indice = indice +1
     }
     console.log("---------------------------------------")
 }
@@ -42,3 +41,5 @@ function removerAlimento (indice){
     Alimentos.splice(indice, 1)
     Valores.splice(indice, 1)
 }
+removerAlimento(3)
+adicionarAlimento()
