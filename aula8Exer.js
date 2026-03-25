@@ -1,4 +1,4 @@
-const Serie = [
+onst Serie = [
     {
         Desenho : "The Amazing Digital Cicus",
         dataLanc : "13/10/2023",
@@ -21,8 +21,16 @@ const Serie = [
         temporadas : "sete",
         Criador : "Ben Bocquelet",
         Disponibilidade: "Está disponível na Netflix, HBO",
-        Sinopse : "acompanha as aventuras de uma corajosa menina de cabelos azuis. Inicialmente vivendo em uma floresta mágica, ela se muda para a cidade de Trolberg, onde faz amigos e interage com criaturas folclóricas misteriosas",
-    }
+        Sinopse: "acompanha as desventuras de Gumball Watterson, um gato azul de 12 anos, e seu irmão adotivo, o peixinho Darwin, na excêntrica cidade de Elmore. A série mistura animação 2D, 3D e cenários reais, focando no caos escolar e familiar da pré-adolescência, com humor ácido e situações surrealistas."
+    },
+    {
+        Desenho : "Apenas Um Show",
+        dataLanc : "6/09/2010",
+        temporadas : "oito",
+        Criador : " J.G. Quintel.",
+        Disponibilidade: "Está disponível na Netflix, HBO, Prime video",
+        Sinopse: ""
+    },
 ]
  
 const SerieJSON = JSON.stringify(Serie)
@@ -41,5 +49,4 @@ function criarArquivo(obj){
 criarArquivo(Serie)
  const arquivo = require("./Serie.json")
  console.log(arquivo)
-
 
