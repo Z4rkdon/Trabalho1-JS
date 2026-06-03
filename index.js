@@ -35,9 +35,15 @@ app.get("/clientes", (req, res)=>{
 })
 
 app.get("/clientes/:cpf", (req, res)=>{
+    const cpf = req.params.cpf
     try{
     const clientes = JSON.parse(fs.readFileSync("bd.json", "utf8"))
-    res.status(200).json(clientes)
+    const cliente_encontrado = clientes.find(
+        (cliente) => cliente.cpf.replace(/\D/g, "") == cpf)
+    if(!cliente_encontrado){
+         res.status(404).json({error: "Cliente não existe em nosso banco"})
+    }
+    res.status(200).json(cliente_encontrado)
     }catch(error) {
         res.status(500).json({resposta: error.message})
     }
