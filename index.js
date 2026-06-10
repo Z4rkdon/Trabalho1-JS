@@ -65,7 +65,24 @@ app.delete("/clientes/:cpf", (req, res) => {
     }
 })
 
-
+app.put("/clientes/:cpf", (req, res) => {
+    const cpf = req.params.cpf;
+    const dados = req.body;
+    try{
+        const clientes = JSON.parse(fs.readFileSync("bd.json", "utf8"))
+        const indice_clientes = clientes.findIndex(
+            (clientes)=> clientes.cpf.replace(/\D/g, "") == cpf)
+            if(indice_clientes == -1){
+                return res.status(404).json({ resposta: "Cliente não encontrado" })
+            }
+            clientes[indice_clientes] = dados
+            fs.writeFileSync("bd.json", JSON.stringify(clientes), "utf8")
+            res.status(200).json({ resposta: "Cliente alterado com sucesso!!" })
+    } catch (error) {
+        res.status(500).json({ resposta: error.message});
+    }   
+})    
+        
 app.listen(port, ()=>{
     console.log("API executando na porta" + port)
 })
